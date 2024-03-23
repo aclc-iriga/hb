@@ -36,7 +36,7 @@
 </head>
 <body>
     <div class="container py-5">
-        <h2 class="fw-bolder">Mr. and Ms. San Agustin (Iriga City) 2023</h2>
+        <h2 class="fw-bolder">Hunk and Babe at Jill Chester Resort (Balatan, Camarines Sur) 2024</h2>
     </div>
     <div>
         <table>
