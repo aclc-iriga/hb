@@ -64,8 +64,8 @@ $routes = [
     [ "name" => "User Assignments", "route" => "crud/assignment"         ],
     [ "name" => "Eliminations"    , "route" => "crud/eliminations"       ],
     [ "name" => "Arrangements"    , "route" => "crud/orders"             ],
-    [ "name" => "Top 5 (Male)"    , "route" => "results/top5/male.php"   ],
-    [ "name" => "Top 5 (Female)"  , "route" => "results/top5/female.php" ]
+    [ "name" => "Top 6 (Male)"    , "route" => "results/top6/male"   ],
+    [ "name" => "Top 6 (Female)"  , "route" => "results/top6/female" ]
 ];
 ?>
 <!DOCTYPE html>
