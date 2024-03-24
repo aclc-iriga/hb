@@ -11,15 +11,19 @@ require_once '../../../models/Event.php';
 const EVENTS = [
     [
         'slug'    => 'production-1',
-        'percent' => 33.33
+        'percent' => 25
     ],
     [
-        'slug'    => 'white-bikini-1',
-        'percent' => 33.33
+        'slug'    => 'white-bikini-parade-1',
+        'percent' => 25
     ],
     [
         'slug'    => 'festival-bikini-1',
-        'percent' => 33.33
+        'percent' => 25
+    ],
+    [
+        'slug'    => 'bikini-showdown-1',
+        'percent' => 25
     ],
 ];
 
