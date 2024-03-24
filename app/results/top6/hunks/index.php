@@ -10,17 +10,21 @@ require_once '../../../models/Event.php';
 // involved events
 const EVENTS = [
     [
-        'slug'    => 'production-2',
-        'percent' => 33.33
+        'slug'    => 'production-1',
+        'percent' => 25
     ],
     [
-        'slug'    => 'white-bikini-2',
-        'percent' => 33.33
+        'slug'    => 'white-bikini-parade-1',
+        'percent' => 25
     ],
     [
-        'slug'    => 'festival-bikini-2',
-        'percent' => 33.33
-    ]
+        'slug'    => 'festival-bikini-1',
+        'percent' => 25
+    ],
+    [
+        'slug'    => 'bikini-showdown-1',
+        'percent' => 25
+    ],
 ];
 
 // initialize titles
@@ -208,7 +212,7 @@ foreach($titles as $title) {
 sort($tops_ordered);
 
 // shuffle $tops_unordered (deterministic)
-mt_srand(318579462);
+mt_srand(794623185);
 shuffle($tops_unordered);
 ?>
 <!DOCTYPE html>
@@ -235,7 +239,7 @@ shuffle($tops_unordered);
             border-left: 2px solid #aaa !important;
         }
     </style>
-    <title>Top <?= sizeof($titles) ?> | <?= $competition_title ?></title>
+    <title>Top <?= sizeof($titles) ?> (Hunks) | <?= $competition_title ?></title>
 </head>
 <body>
 <div class="p-1">
@@ -243,7 +247,7 @@ shuffle($tops_unordered);
         <thead class="bt">
         <tr class="table-secondary">
             <th colspan="3" rowspan="3" class="text-center bt br bl bb">
-                <h1 class="m-0">TOP <?= sizeof($titles) ?></h1>
+                <h1 class="m-0">TOP <?= sizeof($titles) ?> (Hunks)</h1>
                 <h5><?= $competition_title ?></h5>
             </th>
             <?php for($i=0; $i<sizeof($events); $i++) { ?>
@@ -290,7 +294,7 @@ shuffle($tops_unordered);
                 <!-- avatar -->
                 <td rowspan="2" class="bb" style="width: 56px;">
                     <img
-                        src="../../crud/uploads/<?= $team['info']['avatar'] ?>"
+                        src="../../../crud/uploads/<?= $team['info']['avatar'] ?>"
                         alt="<?= $team['info']['number'] ?>"
                         style="width: 56px; border-radius: 100%"
                     >
@@ -347,7 +351,7 @@ shuffle($tops_unordered);
     <div class="container-fluid">
         <div class="row justify-content-center">
             <?php foreach($judges as $judge) { ?>
-                <div class="col-md-3">
+                <div class="col-md-4 col-sm-4">
                     <div class="mt-5 pt-3 text-center">
                         <h6 class="mb-0"><?= $judge->getName() ?></h6>
                     </div>
@@ -361,6 +365,51 @@ shuffle($tops_unordered);
                     </div>
                 </div>
             <?php } ?>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="container-fluid mt-5" style="page-break-before: always;">
+        <div class="row">
+            <!-- unordered -->
+            <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3" align="center">
+                <h4 class="opacity-75"><?= $competition_title ?></h4>
+                <h1>TOP <?= sizeof($titles) ?> (Hunks) in Random Order</h1>
+                <div style="width: 80%;">
+                    <table class="table table-bordered mt-3">
+                        <tbody>
+                        <?php
+                        foreach($tops_unordered as $team_id) {
+                            $team = $result['team_'.$team_id];
+                            ?>
+                            <tr>
+                                <!-- number -->
+                                <td class="pe-3 fw-bold text-center">
+                                    <h3 class="m-0">
+                                        <?= $team['info']['number'] ?>
+                                    </h3>
+                                </td>
+
+                                <!-- avatar -->
+                                <td style="width: 72px;">
+                                    <img
+                                        src="../../../crud/uploads/<?= $team['info']['avatar'] ?>"
+                                        alt="<?= $team['info']['number'] ?>"
+                                        style="width: 100%; border-radius: 100%"
+                                    >
+                                </td>
+
+                                <!-- name -->
+                                <td>
+                                    <h6 class="text-uppercase m-0"><?= $team['info']['name'] ?></h6>
+                                    <small class="m-0"><?= $team['info']['location'] ?></small>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -37,6 +37,8 @@ app/crud/uploads/*
 !app/crud/uploads/ms-07-andrea-yvonne.jpg
 !app/crud/uploads/ms-08-stephanie-veil.jpg
 !app/crud/uploads/ms-09-rica-ashbel.jpg
+!app/crud/uploads/ms-01-jenny-rose-espanola.jpg
+!app/crud/uploads/ms-09-annahathaway-smith.jpg
 !app/crud/uploads/no-avatar.jpg
 !app/crud/dist
 /cypress/videos/
